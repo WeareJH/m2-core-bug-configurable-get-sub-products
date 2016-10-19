@@ -1,40 +1,5 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\Indexer\LinkedProductSelectBuilderByIndexPrice"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\Indexer\LinkedProductSelectBuilderByIndexPrice" />
-
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByBasePrice"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByBasePrice" />
-
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByCatalogRulePrice"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByCatalogRulePrice" />
-
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderBySpecialPrice"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderBySpecialPrice" />
-
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByTierPrice"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByTierPrice" />
-
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderComposite"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderComposite" />
-
-    <preference for="Magento\ConfigurableProduct\Pricing\Price\ConfigurableOptionsProvider"
-                type="Jh\CoreBugConfigurableGetSubProducts\ConfigurableProduct\Pricing\Price\ConfigurableOptionsProvider" />
-
-    <preference for="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderInterface"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderComposite" />
-
-    <preference for="Magento\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderInterface"
-                type="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderComposite" />
-
-    <type name="Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderComposite">
-        <arguments>
-            <argument name="linkedProductSelectBuilder" xsi:type="array">
-                <item name="basePrice" xsi:type="object">Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByBasePrice</item>
-                <item name="specialPrice" xsi:type="object">Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderBySpecialPrice</item>
-                <item name="tierPrice" xsi:type="object">Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\LinkedProductSelectBuilderByTierPrice</item>
-                <item name="indexPrice" xsi:type="object">Jh\CoreBugConfigurableGetSubProducts\Catalog\Model\ResourceModel\Product\Indexer\LinkedProductSelectBuilderByIndexPrice</item>
-            </argument>
-        </arguments>
-    </type>
+    <preference for="Magento\CatalogInventory\Helper\Stock"
+                type="Jh\CoreBugConfigurableGetSubProducts\CatalogInventory\Helper\Stock" />
 </config>
